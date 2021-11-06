@@ -1,0 +1,46 @@
+:root {
+  --main: rgb(79, 161, 255);
+  --accent: rgb(0, 119, 255);
+  --text: white;
+}
+
+body {
+  margin: auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.4rem;
+  background-color: rgb(255, 255, 255);
+  color: rgb(87, 87, 87);
+  line-height: 1.5;
+}
+
+/*** ******************************** ****/
+/***             ANIMATIONS           ****/
+/*** ******************************** ****/
+
+@keyframes append-animate {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes remove-animate {
+  from {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  to {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}

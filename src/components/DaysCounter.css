@@ -1,8 +1,4 @@
-:root {
-  --main: rgb(79, 161, 255);
-  --accent: rgb(0, 119, 255);
-  --text: white;
-}
+
 
 .counter {
   display: flex;
