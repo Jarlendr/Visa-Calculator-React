@@ -4,19 +4,40 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './NewStay.css';
 
-const NewStay = () => {
+const NewStay = (props) => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
 
+  const startDateChange = (event) => {
+    setStartDate(new Date(event));
+  };
+
+  const endDateChange = (event) => {
+    setEndDate(new Date(event));
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const dateInputs = {
+      start: startDate,
+      end: endDate,
+      id: Math.random().toString(),
+    };
+
+    props.onSaveDateInputsHandler(dateInputs);
+    setStartDate(null);
+    setEndDate(null);
+  };
+
   return (
-    <form className="new-stay__form">
+    <form className="new-stay__form" onSubmit={submitHandler}>
       <DatePicker
         className="new-stay"
         isClearable
         withPortal
         placeholderText="Select Start Date"
         selected={startDate}
-        onChange={(startDate) => setStartDate(startDate)}
+        onChange={startDateChange}
         selectStart
         startDate={startDate}
         onFocus={(e) => (e.target.readOnly = true)}
@@ -31,7 +52,7 @@ const NewStay = () => {
         startDate={startDate}
         endDate={endDate}
         minDate={startDate}
-        onChange={(date) => setEndDate(date)}
+        onChange={endDateChange}
         onFocus={(e) => (e.target.readOnly = true)}
       />
       <span className="break"></span>

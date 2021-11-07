@@ -1,12 +1,12 @@
 const DaysCircleText = () => {
   return (
     <text
-      class="days"
+      className="days"
       id="days"
       x="50%"
       y="50%"
-      alignment-baseline="middle"
-      text-anchor="middle"
+      alignmentBaseline="middle"
+      textAnchor="middle"
       fill="white"
     >
       0
