@@ -9,17 +9,18 @@ function App() {
   const [dates, setDates] = useState();
 
   const saveDateInputsHandler = (date) => {
-    setDates((prevDates) => {
-      return [date, ...prevDates];
+    setDates((prevState) => {
+      if (!prevState) {
+        return [date];
+      } else return [date, ...prevState];
     });
   };
 
-  console.log(dates);
   return (
     <div>
       <DaysCounter />
       <NewStay onSaveDateInputsHandler={saveDateInputsHandler} />
-      <StayContainer />
+      <StayContainer dates={dates} />
     </div>
   );
 }

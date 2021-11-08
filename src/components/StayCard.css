@@ -1,15 +1,12 @@
 .stay-card {
   display: flex;
-  justify-content: space-evenly;
   margin: auto;
   margin-bottom: 0.5em;
+  padding: 1em 0;
   transform-origin: 50% 0;
-  animation: append-animate 0.3s linear;
-  background-color: white;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
     rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  border-left: 1em solid var(--accent);
-  border-radius: 0.5em 0.5em;
-  padding: 1em 0;
-  max-width: 90vw;
+  border-radius: 0.5em;
+  animation: append-animate 0.3s linear;
+  background-color: white;
 }

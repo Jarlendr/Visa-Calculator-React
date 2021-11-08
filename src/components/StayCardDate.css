@@ -1,0 +1,38 @@
+.stay-date {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+  min-width: 5em;
+  max-height: 5em;
+}
+
+.stay-date__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  flex-flow: column-reverse;
+  justify-content: space-evenly;
+  flex: 1;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+    rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.stay-date__year {
+  width: 100%;
+  text-align: center;
+}
+
+.stay-date__day {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.stay-date__month {
+  background-color: var(--accent);
+  color: white;
+  width: 100%;
+  text-align: center;
+
+}

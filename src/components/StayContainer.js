@@ -2,11 +2,15 @@ import './StayContainer.css';
 import StayCard from './StayCard';
 
 const StayContainer = (props) => {
+  if (!props.dates) {
+    return null;
+  }
+
   return (
     <div className="stay">
-      <StayCard />
-      <StayCard />
-      <StayCard />
+      {props.dates.map((stay) => (
+        <StayCard key={stay.id} start={stay.start} end={stay.end} />
+      ))}
     </div>
   );
 };
