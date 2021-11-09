@@ -18,6 +18,9 @@ const NewStay = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    if (!startDate || !endDate) {
+      return;
+    }
     const dateInputs = {
       start: startDate,
       end: endDate,
@@ -41,6 +44,7 @@ const NewStay = (props) => {
         selectStart
         startDate={startDate}
         onFocus={(e) => (e.target.readOnly = true)}
+        required
       />
       <DatePicker
         className="new-stay"

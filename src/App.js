@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div>
-      <DaysCounter />
+      <DaysCounter dates={dates}/>
       <NewStay onSaveDateInputsHandler={saveDateInputsHandler} />
       <StayContainer dates={dates} />
     </div>

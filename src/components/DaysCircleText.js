@@ -1,4 +1,4 @@
-const DaysCircleText = () => {
+const DaysCircleText = (props) => {
   return (
     <text
       className="days"
@@ -8,8 +8,9 @@ const DaysCircleText = () => {
       alignmentBaseline="middle"
       textAnchor="middle"
       fill="white"
+      
     >
-      0
+      {props.days}
     </text>
   );
 };

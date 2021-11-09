@@ -1,5 +1,3 @@
-
-
 .counter {
   display: flex;
   flex-direction: column;
@@ -28,6 +26,12 @@
 .days {
   font-size: 0.4rem;
   pointer-events: none;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
 }
 
 .circular--chart {
