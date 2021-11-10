@@ -13,6 +13,7 @@ const DaysCircle = (props) => {
   const percent = percentCalculator(props.check[0]),
     days = props.check[0];
 
+  props.onColorChange(percent)
   return (
     <svg viewBox="0 0 36 36" height="300" className="circular--chart">
       <DaysCirclePath percent={percent} />

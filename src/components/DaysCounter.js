@@ -82,7 +82,7 @@ const DaysCounter = (props) => {
 
   return (
     <div className="counter">
-      <DaysCircle check={ninetyDaysCheck} />
+      <DaysCircle check={ninetyDaysCheck} onColorChange={props.onColorChange}/>
       <h5 id="info--text">
         Input your planned stay and any previous stays, then press
         'calculate'

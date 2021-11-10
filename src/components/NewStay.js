@@ -16,6 +16,12 @@ const NewStay = (props) => {
     setEndDate(new Date(event));
   };
 
+  const onChange = (dates) => {
+    const [start, end] = dates;
+    setStartDate(start);
+    setEndDate(end);
+  };
+
   const submitHandler = (event) => {
     event.preventDefault();
     if (!startDate || !endDate) {
@@ -38,31 +44,18 @@ const NewStay = (props) => {
         className="new-stay"
         isClearable
         withPortal
-        placeholderText="Select Start Date"
-        selected={startDate}
-        onChange={startDateChange}
-        selectStart
+        fixedHeight
+        dateFormat="dd/MM/yy"
+        placeholderText="Select start and end dates"
+        selected={new Date()}
+        onChange={onChange}
         startDate={startDate}
+        endDate={endDate}
+        selectsRange
         onFocus={(e) => (e.target.readOnly = true)}
         required
       />
-      <DatePicker
-        className="new-stay"
-        isClearable
-        withPortal
-        placeholderText="Select End Date"
-        selected={endDate}
-        selectsEnd
-        startDate={startDate}
-        endDate={endDate}
-        minDate={startDate}
-        onChange={endDateChange}
-        onFocus={(e) => (e.target.readOnly = true)}
-      />
       <span className="break"></span>
-      <button className="button" type="button">
-        Cancel
-      </button>
       <button className="button" type="submit">
         Submit
       </button>

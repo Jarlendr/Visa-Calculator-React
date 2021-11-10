@@ -3,7 +3,7 @@ import './StayCardDuration.css';
 const StayCardDuration = (props) => {
   let days = ' days';
   const duration =
-    (props.end - props.start) / (1000 * 60 * 60 * 24) + 1;
+    Math.round((props.end - props.start) / (1000 * 60 * 60 * 24) + 1);
 
   if (duration === 1) {
     days = ' day';

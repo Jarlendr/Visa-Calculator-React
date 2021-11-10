@@ -3,15 +3,15 @@ import './DaysCounter.css';
 
 const DaysCirclePath = (props) => {
   // Determines speed of circle path
-  const circleSpeed = () => {
-    if (props.percent <= 33) {
+  const circleSpeed = (percent) => {
+    if (percent <= 33) {
       return 0.5;
     } else if (props.percent > 33 && props.percent <= 66) {
       return 1;
     } else return 1.5;
   };
 
-  let speed = circleSpeed();
+  let speed = circleSpeed(props.percent);
 
   let circleAnimate = {
     animation: 'progress ' + speed + 's ease-out forwards'

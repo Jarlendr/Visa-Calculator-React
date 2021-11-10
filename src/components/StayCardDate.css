@@ -31,6 +31,7 @@
 
 .stay-date__month {
   background-color: var(--accent);
+  transition: background-color 1s linear;
   color: white;
   width: 100%;
   text-align: center;
