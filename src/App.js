@@ -31,11 +31,15 @@ function App() {
     });
   };
 
+  const removeDateHandler = (card) => {
+    console.log(card);
+  };
+
   return (
     <div style={{ '--main': colorMain, '--accent': colorAccent }}>
       <DaysCounter dates={dates} onColorChange={changeColorHandler} />
       <NewStay onSaveDateInputsHandler={saveDateInputsHandler} />
-      <StayContainer dates={dates} />
+      <StayContainer dates={dates} onRemoval={removeDateHandler} />
     </div>
   );
 }

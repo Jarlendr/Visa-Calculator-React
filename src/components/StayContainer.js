@@ -9,7 +9,13 @@ const StayContainer = (props) => {
   return (
     <div className="stay">
       {props.dates.map((stay) => (
-        <StayCard key={stay.id} start={stay.start} end={stay.end} />
+        <StayCard
+          key={stay.id}
+          id={stay.id}
+          start={stay.start}
+          end={stay.end}
+          onRemoval={props.onRemoval}
+        />
       ))}
     </div>
   );

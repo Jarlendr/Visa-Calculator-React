@@ -6,7 +6,7 @@ const StayCard = (props) => {
   return (
     <div className="stay-card">
       <StayCardDate date={props.start} />
-      <StayCardDuration start={props.start} end={props.end} />
+      <StayCardDuration start={props.start} end={props.end} onRemoval={props.onRemoval} id={props.id}/>
       <StayCardDate date={props.end} />
     </div>
   );

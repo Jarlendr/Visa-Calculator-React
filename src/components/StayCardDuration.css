@@ -9,3 +9,9 @@
   border-bottom: 0.2em solid var(--accent);
   min-width: 4em;
 }
+
+.button-remove__card {
+  width: 3em;
+  height: 2em;
+  margin-top: -3em;
+}

@@ -8,14 +8,6 @@ const NewStay = (props) => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
 
-  const startDateChange = (event) => {
-    setStartDate(new Date(event));
-  };
-
-  const endDateChange = (event) => {
-    setEndDate(new Date(event));
-  };
-
   const onChange = (dates) => {
     const [start, end] = dates;
     setStartDate(start);
@@ -46,8 +38,8 @@ const NewStay = (props) => {
         withPortal
         fixedHeight
         dateFormat="dd/MM/yy"
-        placeholderText="Select start and end dates"
-        selected={new Date()}
+        placeholderText="Select Start/End"
+        selected={null}
         onChange={onChange}
         startDate={startDate}
         endDate={endDate}

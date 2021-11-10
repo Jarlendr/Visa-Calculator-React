@@ -1,9 +1,14 @@
 import './StayCardDuration.css';
 
 const StayCardDuration = (props) => {
+  const onRemove = () => {
+    props.onRemoval(props.id);
+  };
+
   let days = ' days';
-  const duration =
-    Math.round((props.end - props.start) / (1000 * 60 * 60 * 24) + 1);
+  const duration = Math.round(
+    (props.end - props.start) / (1000 * 60 * 60 * 24) + 1
+  );
 
   if (duration === 1) {
     days = ' day';
@@ -11,8 +16,17 @@ const StayCardDuration = (props) => {
 
   return (
     <div className="stay-duration">
-      <div className="duration-line"/>
-      <div>{duration} {days}</div>
+      <button
+        className="button button-remove__card"
+        title="Remove stay"
+        onClick={onRemove}
+      >
+        X
+      </button>
+      <div className="duration-line" />
+      <div>
+        {duration} {days}
+      </div>
     </div>
   );
 };

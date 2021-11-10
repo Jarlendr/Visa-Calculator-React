@@ -1,7 +1,13 @@
+import React, { useState } from 'react';
+
 import './DaysCounter.css';
 import DaysCircle from './DaysCircle';
 
 const DaysCounter = (props) => {
+  const [text, setText] = useState(
+    'Input the start and end date for your stay and press submit'
+  );
+
   let ninetyDaysCheck = [0, false];
   if (props.dates) {
     // Adds a specified numbers of days to a date
@@ -53,7 +59,6 @@ const DaysCounter = (props) => {
       const datesLen = dates.length;
       let days = [0, false];
 
-
       const latestStayRange = dateRange(dates[0].start, dates[0].end),
         latestStayRangeLen = latestStayRange.length;
 
@@ -80,13 +85,30 @@ const DaysCounter = (props) => {
     ninetyDaysCheck = ninetyDaysCalculator(props.dates);
   }
 
+  const updateText = (percent = 0) => {
+    if (percent >= 90 && percent < 100) {
+      setText(
+        'You will be close to overstaying. Consider altering your travel plans'
+      );
+    } else if (percent >= 100) {
+      setText(
+        'You will overstay on ' +
+          ninetyDaysCheck[1] +
+          '. You should alter your travel plans!'
+      );
+    } else {
+      setText('You are not at risk of overstaying');
+    }
+  };
+
   return (
     <div className="counter">
-      <DaysCircle check={ninetyDaysCheck} onColorChange={props.onColorChange}/>
-      <h5 id="info--text">
-        Input your planned stay and any previous stays, then press
-        'calculate'
-      </h5>
+      <DaysCircle
+        check={ninetyDaysCheck}
+        onColorChange={props.onColorChange}
+        onTextChange={updateText}
+      />
+      <h5 id="info--text">{text}</h5>
     </div>
   );
 };

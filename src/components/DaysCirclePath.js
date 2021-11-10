@@ -1,4 +1,3 @@
-import DaysCircle from './DaysCircle';
 import './DaysCounter.css';
 
 const DaysCirclePath = (props) => {
