@@ -3,11 +3,29 @@
   align-items: center;
   flex-direction: column;
   background-color: var(--main);
-  transition: background-color 1s linear;
+  transition: background-color 300ms linear;
   padding-top: 1em;
   margin-top: 1em;
 }
 
 .empty {
-  display: none;
+  background-color: white;
+}
+
+.item-enter {
+  transform: scale(0);
+  opacity: 0;
+}
+.item-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms ease-in, transform 300ms ease-in-out;
+}
+.item-exit {
+  opacity: 1;
+}
+.item-exit-active {
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 300ms ease-in, transform 300ms ease-in-out;
 }

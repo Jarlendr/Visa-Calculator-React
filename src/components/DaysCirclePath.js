@@ -6,15 +6,15 @@ const DaysCirclePath = (props) => {
     if (percent <= 33) {
       return 0.5;
     } else if (props.percent > 33 && props.percent <= 66) {
-      return 1;
-    } else return 1.5;
+      return 0.8;
+    } else return 1;
   };
 
   let speed = circleSpeed(props.percent);
 
   let circleAnimate = {
-    animation: 'progress ' + speed + 's ease-out forwards'
-  }
+    animation: 'progress ' + speed + 's ease-out forwards',
+  };
 
   return (
     <path
@@ -28,9 +28,7 @@ const DaysCirclePath = (props) => {
       stroke="#444"
       strokeWidth="1"
       strokeDasharray={props.percent + ', 100'}
-      style={
-        circleAnimate
-      }
+      style={circleAnimate}
     />
   );
 };

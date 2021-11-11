@@ -7,7 +7,7 @@
   padding-bottom: 2em;
   background-color: var(--main);
   min-height: 40vh;
-  transition: background-color 1s linear;
+  transition: background-color 300ms linear;
 }
 
 .counter--circle {
