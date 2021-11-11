@@ -32,7 +32,9 @@ function App() {
   };
 
   const removeDateHandler = (card) => {
-    console.log(card);
+    const newDates = dates.filter(stay => {
+      return stay.id !== card;})
+      setDates(newDates);
   };
 
   return (

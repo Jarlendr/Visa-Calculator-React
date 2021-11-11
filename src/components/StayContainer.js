@@ -4,6 +4,8 @@ import StayCard from './StayCard';
 const StayContainer = (props) => {
   if (!props.dates) {
     return null;
+  } else if (props.dates.length === 0) {
+    return null;
   }
 
   return (

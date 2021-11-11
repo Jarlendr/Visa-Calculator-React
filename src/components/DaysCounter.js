@@ -52,7 +52,7 @@ const DaysCounter = (props) => {
     // intersecting days there are between the planned stay and the
     // previous stays. Will return the total number of intersecting days.
     const ninetyDaysCalculator = (dates) => {
-      if (!dates[0].start || !dates[0].end) {
+      if (!dates[0]) {
         return;
       }
 
@@ -95,6 +95,10 @@ const DaysCounter = (props) => {
         'You will overstay on ' +
           ninetyDaysCheck[1] +
           '. You should alter your travel plans!'
+      );
+    } else if (percent === 0) {
+      setText(
+        'Input the start and end date for your stay and press submit'
       );
     } else {
       setText('You are not at risk of overstaying');
