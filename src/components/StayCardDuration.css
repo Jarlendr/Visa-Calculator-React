@@ -13,5 +13,24 @@
 .button-remove__card {
   width: 3em;
   height: 2em;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: -3em;
+  
+}
+
+/*** ******************************** ****/
+/***           MEDIA QUERIES          ****/
+/*** ******************************** ****/
+
+@media (min-width: 900px) {
+  .duration-line {
+    min-width: 30vw;
+  }
+}
+
+@media (min-width: 1400px) {
+  .duration-line {
+    min-width: 20vw;
+  }
 }

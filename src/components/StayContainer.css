@@ -1,3 +1,4 @@
+
 .stay {
   display: flex;
   align-items: center;
@@ -5,7 +6,9 @@
   background-color: var(--main);
   transition: background-color 300ms linear;
   padding-top: 1em;
+  margin: auto;
   margin-top: 1em;
+  border-radius: 0em;
 }
 
 .empty {
@@ -29,3 +32,19 @@
   transform: scale(0);
   transition: opacity 300ms ease-in, transform 300ms ease-in-out;
 }
+
+@media (min-width: 900px) {
+  .stay {
+    max-width: 70vw;
+    border-radius: 0.5em;
+  }
+}
+
+@media (min-width: 1400px) {
+  .stay {
+    max-width: 50vw;
+    border-radius: 0.5em;
+  }
+}
+
+
