@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
 import './App.css';
-import DaysCounter from './components/DaysCounter';
-import NewStay from './components/NewStay';
-import StayContainer from './components/StayContainer';
+import DaysCounter from './components/DaysCounter/DaysCounter';
+import NewStay from './components/NewStay/NewStay';
+import StayContainer from './components/StayCard/StayContainer';
+import About from './components/About/About';
 
 function App() {
   const [dates, setDates] = useState();
@@ -42,6 +43,7 @@ function App() {
       <DaysCounter dates={dates} onColorChange={changeColorHandler} />
       <NewStay onSaveDateInputsHandler={saveDateInputsHandler} />
       <StayContainer dates={dates} onRemoval={removeDateHandler} />
+      <About />
     </div>
   );
 }

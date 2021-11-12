@@ -7,6 +7,7 @@ import './NewStay.css';
 const NewStay = (props) => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  
 
   const onChange = (dates) => {
     const [start, end] = dates;

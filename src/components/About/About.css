@@ -1,0 +1,63 @@
+/*** ******************************** ****/
+/***                ABOUT             ****/
+/*** ******************************** ****/
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0.5em;
+  font-size: 1.3rem;
+  padding-top: 1em;
+}
+
+.about--header {
+  margin: auto;
+  margin-top: 2em;
+  pointer-events: none;
+}
+
+#disclaimer--header {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-top: 0.5em;
+  margin-top: 0;
+}
+
+#disclaimer--text {
+  border: 0.2em solid var(--main);
+  padding: 2em;
+  max-width: 80vw;
+  font-size: 1rem;
+  margin: auto;
+}
+
+.external--link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.external--link:hover {
+  filter: brightness(60%);
+}
+
+.external--link:active {
+  filter: brightness(40%);
+}
+
+/*** ******************************** ****/
+/***           MEDIA QUERIES          ****/
+/*** ******************************** ****/
+
+@media (min-width: 900px) {
+  .about {
+    max-width: 70vw;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1400px) {
+  .about {
+    max-width: 50vw;
+    margin: auto;
+  }
+}

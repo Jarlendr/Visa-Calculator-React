@@ -28,12 +28,6 @@
   pointer-events: none;
 }
 
-@keyframes progress {
-  0% {
-    stroke-dasharray: 0 100;
-  }
-}
-
 .circular--chart {
   max-height: 60vh;
 }
@@ -52,4 +46,10 @@
   font-weight: 400;
   padding: 1em;
   pointer-events: none;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
 }
