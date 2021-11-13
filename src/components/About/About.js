@@ -33,7 +33,7 @@ const About = () => {
         leave is counted as the last day even if you left before
         sunrise.<sup>2</sup>
       </p>
-      <p class="about--text">
+      <p className="about--text">
         The 180-day period is rolling, meaning that for each day of
         your planned stay, you must count 180 days back and see if you
         exceed the 90/180-day rule. <br />
@@ -51,9 +51,8 @@ const About = () => {
         a warning. If you spend the full 90 days or more, the website
         will turn red and show the date that you overstay.
         <br />
-        Your planned stay should always be at the top of the list,
-        before any of your previous stays - otherwise calculations
-        will be incorrect.
+        Your stays will automatically be sorted by start date in
+        descending order.
       </p>
       <p>
         It is recommended that you do not rely solely on the results

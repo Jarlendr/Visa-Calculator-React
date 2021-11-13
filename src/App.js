@@ -28,16 +28,20 @@ function App() {
     setDates((prevState) => {
       if (!prevState) {
         return [date];
-      } else return [date, ...prevState];
+      } else {
+        let newDates = [date, ...prevState];
+        newDates.sort((a, b) => a.start < b.start ? 1 : -1)
+        return newDates;
+      }
     });
   };
 
   const removeDateHandler = (card) => {
-    const newDates = dates.filter(stay => {
-      return stay.id !== card;})
-      setDates(newDates);
+    const newDates = dates.filter((stay) => {
+      return stay.id !== card;
+    });
+    setDates(newDates);
   };
-
   return (
     <div style={{ '--main': colorMain, '--accent': colorAccent }}>
       <DaysCounter dates={dates} onColorChange={changeColorHandler} />
