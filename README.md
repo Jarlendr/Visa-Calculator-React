@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Visa Calculator
+This website is designed to make it easier for the frequent traveler to plan stays in the 
+EU/Schengen area (or other zones and countries with similar visa-free rules). 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How to use
+By simply inputting the start and end dates for your planned stay, as well as any recent stays, 
+the calculator will check if you exceed the 90/180-day rule at any point during your planned stay.
+The calculated number of days will be displayed in the top section of this website. 
+If you spend 90% or more of the total available days, the website will turn orange/yellow and issue a warning. 
+If you spend the full 90 days or more, the website will turn red and show the date that you overstay. Additionally, a circle path
+will help you understand how big a percentage of the 90 days that you have used.
 
-## Available Scripts
+## Motivation
+Being in a long distance relationship with someone from across the Schengen borders, international travel for me and
+my partner is frequent, and can make it complicated to manually calculate whether or not we overstay in the Schengen area.
+Some Schengen visa calculators already exists (even an official one), but I found their design to be rather archaic and not
+fully functional on a smartphone.
+I therefore wanted to make a calculator that functions well on both mobile and desktop, with a colourful, playful and simple design.
 
-In the project directory, you can run:
+## Technologies used
+HTML, CSS, JavaScript, React, react-datepicker, react-transition-group.
 
-### `npm start`
+## Improvements made on the previous version of the visa calculator
+This project is a continuation of my original visa calculator, which only uses vanilla JavaScript to make the website dynamic. I wanted to use my 
+recently aquired knowledge about React to rebuild the website. The styling and functionality is not changed drastically, but some key improvements
+have been made:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- The way you input your stays in Schengen have been simplified. There is now only one input form, where previously there was a form for each of the users stays.
+- The single date input is now a range. There is not a seperate date input field for 'start' and 'end' dates.
+- The user can now remove a specific stay, instead of only being able to remove the last stay on the list.
+- The website automatically makes calculations whenever the user adds or removes a stay. There is no longer a need to click a 'calculate' button.
+- The list of stays gets automatically sorted by start date of the stays, in descending order. This means that the calculations will always function correctly, no matter which order the user inputs the stays.
+- Animations/transitions have been modified. They are now faster, making the website feel more responsive.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Challenges and ideas for the future
+The conversion from vanilla JavaScript to React was relatively simple. The biggest challenge was passing function results to parent and child components. A significant portion of the time was spent on changing the styling of the stays, as well as learning about and using the react-datepicker component. Some work had to be done to resolve a deprecation error from using the react-transition-group library.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Some elements to improve upon:
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Testing the code.
+- Understanding best practises for having a significant amount of JavaScript functions in a component (possibly import them from another scripts file?).
+- Using different methods of styling components, instead of just using the vanilla, unscoped CSS.
+- Using more features of React in general. The project only scratches the surface.
