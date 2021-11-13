@@ -30,6 +30,7 @@ const NewStay = (props) => {
     setStartDate(null);
     setEndDate(null);
   };
+  
 
   return (
     <form className="new-stay__form" onSubmit={submitHandler}>

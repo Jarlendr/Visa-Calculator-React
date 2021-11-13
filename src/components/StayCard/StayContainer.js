@@ -1,10 +1,12 @@
+import React from 'react';
+
 import {
-  CSSTransition,
   TransitionGroup,
 } from 'react-transition-group';
 
 import './StayContainer.css';
 import StayCard from './StayCard';
+import StayTransition from './StayTransition'
 
 const StayContainer = (props) => {
   if (props.dates) {
@@ -16,11 +18,7 @@ const StayContainer = (props) => {
     return (
       <TransitionGroup component="div" className="stay">
         {props.dates.map((stay) => (
-          <CSSTransition
-            timeout={300}
-            key={stay.id}
-            classNames="item"
-          >
+          <StayTransition key={Math.random()}>
             <StayCard
               key={stay.id}
               id={stay.id}
@@ -28,7 +26,7 @@ const StayContainer = (props) => {
               end={stay.end}
               onRemoval={props.onRemoval}
             />
-          </CSSTransition>
+          </StayTransition>
         ))}
       </TransitionGroup>
     );
